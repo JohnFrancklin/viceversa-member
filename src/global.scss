@@ -24,3 +24,40 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: sans-serif; }
+
+html {
+    font-size: 12px;
+    margin-top: constant(safe-area-inset-top);
+    margin-top: env(safe-area-inset-top);
+}
+
+@media only screen and (min-width: 1201px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    html {
+        font-size: 15px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 576px) {
+    html {
+        font-size: 12px;
+    }
+}
