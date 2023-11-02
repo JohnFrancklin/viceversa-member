@@ -18,7 +18,7 @@ export class HomePage implements OnInit {
     const modal = await this.modalCtrl.create({
       component: EventFilterComponent,
       breakpoints: [0, 0.5, 0.9, 1],
-      initialBreakpoint: 0.9
+      initialBreakpoint: 0.5
     });
     modal.present();
 
