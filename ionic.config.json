@@ -1,0 +1,7 @@
+{
+  "name": "viceversa-member",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
