@@ -1,3 +1,51 @@
-<p>
-  event-filter works!
-</p>
+<div class="container">
+  <div class="title">
+    <span>Filtrer les evenement</span>
+  </div>
+
+  <ion-item lines="Lines" class="item">
+    <div class="icon">
+      <ion-icon name="bookmarks"></ion-icon>
+    </div>
+    <div class="select-category">
+      <ion-select justify="space-between" label="Catégorie des événements" placeholder="Catégorie" [multiple]="true">
+        <ion-select-option *ngFor="let category of categories" [value]="category">{{category.name}}</ion-select-option>
+      </ion-select>
+    </div>
+  </ion-item>
+
+  <ion-item lines="Lines" class="item">
+    <div class="icon">
+      <ion-icon name="calendar"></ion-icon>
+    </div>
+    <ion-datetime presentation="date" [preferWheel]="true"></ion-datetime>
+    <!-- <div class="select-category">
+      <ion-select justify="space-between" label="Date de l'événements" placeholder="Date">
+      <ion-datetime presentation="date" [preferWheel]="true"></ion-datetime>
+      </ion-select>
+    </div> -->
+  </ion-item>
+
+  <ion-item lines="Lines" class="item">
+    <div class="icon">
+      <ion-icon name="people"></ion-icon>
+    </div>
+    <div class="select-category">
+      <ion-select justify="space-between" label="Publication de" placeholder="Publication" [multiple]="true">
+        <ion-select-option *ngFor="let venue of venues" [value]="venue">{{venue.name}}</ion-select-option>
+      </ion-select>
+    </div>
+  </ion-item>
+
+  <ion-item lines="Lines" class="item">
+    <div class="icon">
+      <ion-icon name="location"></ion-icon>
+    </div>
+    <div class="select-category">
+      <ion-select justify="space-between" label="Location" placeholder="Location" [multiple]="true">
+        <ion-select-option *ngFor="let location of locations" [value]="location">{{location.name}}</ion-select-option>
+      </ion-select>
+    </div>
+  </ion-item>
+
+</div>

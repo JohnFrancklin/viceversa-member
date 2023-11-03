@@ -5,13 +5,14 @@ import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SwitchThemeComponent } from 'src/app/pages/profile/components/switch-theme/switch-theme.component';
-
+import { EventFilterComponent } from 'src/app/pages/home/components/event-filter/event-filter.component';
 
 
 @NgModule({
   declarations: [
     EventPostComponent,
-    SwitchThemeComponent
+    SwitchThemeComponent,
+    EventFilterComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
@@ -23,7 +24,8 @@ import { SwitchThemeComponent } from 'src/app/pages/profile/components/switch-th
   ],
   exports: [
     EventPostComponent,
-    SwitchThemeComponent
+    SwitchThemeComponent,
+    EventFilterComponent
   ]
 })
 export class SharedModule { }

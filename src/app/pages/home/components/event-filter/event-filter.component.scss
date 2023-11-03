@@ -1,0 +1,12 @@
+.item {
+    display: inline-flex;
+    width: 100%;
+}
+
+.icon {
+    width: 25px;
+}
+
+.select-category {
+    width: calc(100% - 25px);
+}
