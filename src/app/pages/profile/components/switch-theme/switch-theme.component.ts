@@ -27,8 +27,6 @@ export class SwitchThemeComponent  implements OnInit {
 
   toggleDarkMode() {
     this._darkMode = !this._darkMode;
-    console.log("this.darkMode", this._darkMode);
-    
     localStorage.setItem("darkMode", JSON.stringify(this._darkMode));
     this.sharedService._darkMode$.next(this._darkMode);
     this.applyMode()
