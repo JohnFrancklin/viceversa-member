@@ -61,3 +61,55 @@ html {
         font-size: 12px;
     }
 }
+
+//*************************************************///
+:root {
+
+    --primary:#1b6481;
+    --secondary:#b1ccd1;
+    --tertiary:orangeRed;
+    --quaternary:#179fa1;
+    --quinary:#20dad1;
+    --background: rgb(245 245 245);
+    --frontground: white;
+
+  }
+
+//   body {
+//     background-color: var(--background);
+//   }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .btn-primary {
+    background: var(--primary)!important;
+    color: var(--frontground)!important;
+  }
+
+  .btn-secondary {
+      background: var(--secondary)!important;
+  }
+
+  mat-hint {
+    font-size: smaller;
+    margin-right: -13px;
+    margin-top: -5px;
+  }
+
+  .row {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .col {
+    width: 48%;
+  }
+
+  .nothing-changed {
+    margin-right: 1rem;
+    color: orange;
+  }

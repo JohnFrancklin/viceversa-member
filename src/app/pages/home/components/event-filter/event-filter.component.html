@@ -1,6 +1,6 @@
 <div class="container">
   <div class="title">
-    <span>Filtrer les evenement</span>
+    <span>Filtrer les evenements</span>
   </div>
 
   <ion-item lines="Lines" class="item">
@@ -8,8 +8,8 @@
       <ion-icon name="bookmarks"></ion-icon>
     </div>
     <div class="select-category">
-      <ion-select justify="space-between" label="Catégorie des événements" placeholder="Catégorie" [multiple]="true">
-        <ion-select-option *ngFor="let category of categories" [value]="category">{{category.name}}</ion-select-option>
+      <ion-select justify="space-between" label="Catégorie des événements" placeholder="{{ selectedCategory || 'Catégorie' }}" [multiple]="true" [(ngModel)]="selectedCategory">
+        <ion-select-option *ngFor="let category of categories; let id= index" [value]="category">{{category.name}}</ion-select-option>
       </ion-select>
     </div>
   </ion-item>
@@ -18,12 +18,11 @@
     <div class="icon">
       <ion-icon name="calendar"></ion-icon>
     </div>
-    <ion-datetime presentation="date" [preferWheel]="true"></ion-datetime>
-    <!-- <div class="select-category">
-      <ion-select justify="space-between" label="Date de l'événements" placeholder="Date">
-      <ion-datetime presentation="date" [preferWheel]="true"></ion-datetime>
+    <div class="select-category">
+      <ion-select justify="space-between" label="Date de publication" placeholder="{{ selectedDate || 'Date' }}" [multiple]="true" [(ngModel)]="selectedDate">
+        <ion-select-option *ngFor="let date of dates; let id= index" [value]="date">{{date.name}}</ion-select-option>
       </ion-select>
-    </div> -->
+    </div>
   </ion-item>
 
   <ion-item lines="Lines" class="item">
@@ -31,8 +30,8 @@
       <ion-icon name="people"></ion-icon>
     </div>
     <div class="select-category">
-      <ion-select justify="space-between" label="Publication de" placeholder="Publication" [multiple]="true">
-        <ion-select-option *ngFor="let venue of venues" [value]="venue">{{venue.name}}</ion-select-option>
+      <ion-select justify="space-between" label="Publication de" placeholder="{{ selectedVenue || 'Publication' }}" [multiple]="true" [(ngModel)]="selectedVenue">
+        <ion-select-option *ngFor="let venue of venues; let id= index" [value]="venue">{{venue.name}}</ion-select-option>
       </ion-select>
     </div>
   </ion-item>
@@ -42,10 +41,14 @@
       <ion-icon name="location"></ion-icon>
     </div>
     <div class="select-category">
-      <ion-select justify="space-between" label="Location" placeholder="Location" [multiple]="true">
-        <ion-select-option *ngFor="let location of locations" [value]="location">{{location.name}}</ion-select-option>
+      <ion-select justify="space-between" label="Location" placeholder="{{ selectedLocation || 'Location' }}" [multiple]="true" [(ngModel)]="selectedLocation">
+        <ion-select-option *ngFor="let location of locations; let id= index" [value]="location">{{location.name}}</ion-select-option>
       </ion-select>
     </div>
   </ion-item>
+
+  <div class="result">
+    <button (click)="result()" class="btn-primary btn-result">Afficher les résultats</button>
+  </div>
 
 </div>
