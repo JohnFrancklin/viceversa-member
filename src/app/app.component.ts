@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { SharedService } from './services/shared.service';
+import { TranslateConfigService } from './services/translate-config.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +15,12 @@ private prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 private _darkMode: boolean;
 // dark mode code end ---------------
 
-  constructor(private sharedService: SharedService) {
+language: any;
+
+  constructor(
+    private sharedService: SharedService, 
+    private translateConfigService: TranslateConfigService, 
+    private translate: TranslateService) {
       // dark mode code start ---------------
       this._darkMode = this.prefersDark.matches;
       if (localStorage.getItem('darkMode')) this.darkMode = JSON.parse(localStorage.getItem('darkMode') || '');
@@ -23,6 +30,10 @@ private _darkMode: boolean;
       }
       this.sharedService._darkMode$.next(this.darkMode);
       // dark mode code end ---------------
+
+      this.translateConfigService.getDefaultLanguage();
+      this.language = this.translateConfigService.getCurrentLang();
+
   }
 
   ngOnInit() {
