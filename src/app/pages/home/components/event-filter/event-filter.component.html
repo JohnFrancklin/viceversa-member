@@ -19,7 +19,7 @@
       <ion-icon name="calendar"></ion-icon>
     </div>
     <div class="select-category">
-      <ion-select justify="space-between" label="Date de publication" placeholder="{{ selectedDate || 'Date' }}" [multiple]="true" [(ngModel)]="selectedDate">
+      <ion-select justify="space-between" label="Date de l'événement" placeholder="{{ selectedDate || 'Date' }}" [multiple]="true" [(ngModel)]="selectedDate">
         <ion-select-option *ngFor="let date of dates; let id= index" [value]="date">{{date.name}}</ion-select-option>
       </ion-select>
     </div>
@@ -30,7 +30,7 @@
       <ion-icon name="people"></ion-icon>
     </div>
     <div class="select-category">
-      <ion-select justify="space-between" label="Publication de" placeholder="{{ selectedVenue || 'Publication' }}" [multiple]="true" [(ngModel)]="selectedVenue">
+      <ion-select justify="space-between" label="Evenement de" placeholder="{{ selectedVenue || 'Evenement' }}" [multiple]="true" [(ngModel)]="selectedVenue">
         <ion-select-option *ngFor="let venue of venues; let id= index" [value]="venue">{{venue.name}}</ion-select-option>
       </ion-select>
     </div>
