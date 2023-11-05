@@ -70,7 +70,7 @@ export class HomePage implements OnInit {
   async openModal() {
     const modal = await this.modalCtrl.create({
       component: EventFilterComponent,
-      breakpoints: [0, 0.5, 0.9, 1],
+      breakpoints: [0,this.initialBreakpoint, 0.9, 1],
       initialBreakpoint: this.initialBreakpoint
     });
     modal.present();
