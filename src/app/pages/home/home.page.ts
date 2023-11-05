@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { EventFilterComponent } from './components/event-filter/event-filter.component';
 
 @Component({
@@ -34,19 +34,43 @@ export class HomePage implements OnInit {
       id: 5,
       image: "event6.jpg"
     }
-
   ]
 
-  constructor(private modalCtrl: ModalController) { }
+  screenWidth: number;
+  screenHeight: number;
+  initialBreakpoint: number; // for modal filter
+
+  constructor(
+    private modalCtrl: ModalController, 
+    public platform: Platform) {
+      this.getScreenSize();
+    }
 
   ngOnInit() {
+    
+  }
+
+  getScreenSize() {
+    this.platform.ready().then(() => {
+      console.log('Width: ' + this.platform.width());
+      console.log('Height: ' + this.platform.height());
+      this.screenWidth = this.platform.width();
+      this.screenHeight = this.platform.height();
+
+      if (this.screenHeight<670) this.initialBreakpoint = 0.5;
+      else if (this.screenHeight<700) this.initialBreakpoint = 0.5;
+      else if (this.screenHeight<750) this.initialBreakpoint = 0.5;
+      else if (this.screenHeight<800) this.initialBreakpoint = 0.45;
+      else if (this.screenHeight<850) this.initialBreakpoint = 0.4;
+      else this.initialBreakpoint = 0.4;
+    });
   }
 
   async openModal() {
     const modal = await this.modalCtrl.create({
       component: EventFilterComponent,
       breakpoints: [0, 0.5, 0.9, 1],
-      initialBreakpoint: 0.5
+      initialBreakpoint: this.initialBreakpoint
     });
     modal.present();
 
