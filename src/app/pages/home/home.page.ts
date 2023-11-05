@@ -47,7 +47,6 @@ export class HomePage implements OnInit {
     }
 
   ngOnInit() {
-    
   }
 
   getScreenSize() {
@@ -64,6 +63,8 @@ export class HomePage implements OnInit {
       else if (this.screenHeight<850) this.initialBreakpoint = 0.4;
       else this.initialBreakpoint = 0.4;
     });
+
+    
   }
 
   async openModal() {
