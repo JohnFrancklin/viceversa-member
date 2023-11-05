@@ -7,6 +7,32 @@
 
 .image-container {
     margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+
+    .image-layout {
+        width: 100%;
+    }
+
+    .image-event {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: auto;
+    }
+
+    @media (max-width: 768px) {
+        .image-layout {
+            display: none;
+        }
+
+        .image-event {
+            position: relative;
+            width: 100%;
+        }
+
+      }
+
 }
 
 .info-container {
@@ -29,7 +55,6 @@
     }
 
     .date {
-        color: var(--primary);
         margin-bottom: 5px;
     }
 

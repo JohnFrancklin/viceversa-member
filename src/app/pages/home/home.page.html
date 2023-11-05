@@ -1,6 +1,12 @@
 <ion-content [fullscreen]="true">
 
-  <app-event-post></app-event-post>
+  <div class="container">
+    <div class="column" *ngFor="let event of events">
+      <app-event-post [event]="event"></app-event-post>
+    </div>
+  </div>
+
+
 
   <ion-button (click)="openModal()" expand="block" shape="round">
     Filter
