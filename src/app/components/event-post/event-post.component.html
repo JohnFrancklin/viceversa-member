@@ -1,4 +1,4 @@
-<div class="container" [routerLink]="['/event-detail', { image: event.image }]">
+<div class="container" [routerLink]="['/event-detail']" [queryParams]="{ image: event.image }">
   <div class="image-container">
     <img src="../../../assets/images/layouts/square.png" class="image-layout">
     <img src="../../../assets/images/{{event.image}}" class="image-event">
