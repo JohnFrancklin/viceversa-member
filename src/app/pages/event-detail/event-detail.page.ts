@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./event-detail.page.scss'],
 })
 export class EventDetailPage implements OnInit {
-
+  image: string;
   constructor() { }
 
   ngOnInit() {

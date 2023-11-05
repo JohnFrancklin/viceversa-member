@@ -31,7 +31,7 @@
         <ion-icon name="people"></ion-icon>
       </div>
       <div class="select-category">
-        <ion-select label="Evenement de" placeholder="{{ selectedVenue || 'Evenement' }}" [multiple]="true" [(ngModel)]="selectedVenue">
+        <ion-select label="Evénement de" placeholder="{{ selectedVenue || 'Evénement' }}" [multiple]="true" [(ngModel)]="selectedVenue">
           <ion-select-option *ngFor="let venue of venues; let id= index" [value]="venue">{{venue.name}}</ion-select-option>
         </ion-select>
       </div>
