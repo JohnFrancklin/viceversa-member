@@ -2,11 +2,20 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    .filter-container {
+      width: 100%;
+      height: 4.5rem;
+      background-color: var(--ion-color-light-shade);
+      position: fixed;
+      top: 0;
+      z-index: 1;
+    }
+
   }
   
   .column {
     width: 100%; /* Par défaut, occupe la largeur totale sur les petits écrans */
-    // margin-bottom: 1rem; /* Espacement entre les colonnes */
   }
   
   @media (min-width: 768px) {

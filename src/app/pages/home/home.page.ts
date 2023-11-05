@@ -1,11 +1,15 @@
+import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
 import { EventFilterComponent } from './components/event-filter/event-filter.component';
+
+
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
+
 })
 export class HomePage implements OnInit {
 
@@ -48,6 +52,7 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
   }
+
 
   getScreenSize() {
     this.platform.ready().then(() => {
