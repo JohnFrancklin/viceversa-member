@@ -1,4 +1,4 @@
-<div class="container" routerLink="/event-detail">
+<div class="container" [routerLink]="['/event-detail', { image: event.image }]">
   <div class="image-container">
     <img src="../../../assets/images/layouts/square.png" class="image-layout">
     <img src="../../../assets/images/{{event.image}}" class="image-event">
@@ -14,6 +14,5 @@
       <div class="location">Discotheque, Analakely</div>
     </div>
   </div>
-
 
 </div>

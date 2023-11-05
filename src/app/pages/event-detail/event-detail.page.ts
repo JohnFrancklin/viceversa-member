@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-event-detail',
@@ -6,8 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./event-detail.page.scss'],
 })
 export class EventDetailPage implements OnInit {
+  image: string;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute
+  ) { 
+    this.route.params.subscribe((params) => {
+      this.image = params['image'];
+    });
+  
+  }
 
   ngOnInit() {
   }
