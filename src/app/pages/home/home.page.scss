@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .column {
+    width: 100%; /* Par défaut, occupe la largeur totale sur les petits écrans */
+    // margin-bottom: 1rem; /* Espacement entre les colonnes */
+  }
+  
+  @media (min-width: 768px) {
+    .column {
+      width: calc(50% - 1rem); /* Deux colonnes sur les écrans moyens */
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .column {
+      width: calc(33.33% - 1rem); /* Trois colonnes sur les grands écrans */
+    }
+  }
