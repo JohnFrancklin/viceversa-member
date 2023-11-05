@@ -23,7 +23,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/event-detail/event-detail.module').then( m => m.EventDetailPageModule)
   },
   {
-    path: 'event-detail/:image',
+    path: 'event-detail/:id',
     loadChildren: () => import('./pages/event-detail/event-detail.module').then( m => m.EventDetailPageModule)
   },
   {

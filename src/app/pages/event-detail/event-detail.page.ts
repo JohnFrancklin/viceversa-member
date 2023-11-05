@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-event-detail',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventDetailPage implements OnInit {
   image: string;
-  constructor() { }
+  eventId: number;
+  constructor(public activatedRoute: ActivatedRoute) {
+    this.eventId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
+  }
 
   ngOnInit() {
   }

@@ -1,5 +1,5 @@
-<div class="container" [routerLink]="['/event-detail']" [queryParams]="{ image: event.image }">
-  <div class="image-container">
+<div class="container">
+  <div class="image-container" (click)="navigate(event.id)">
     <img src="../../../assets/images/layouts/square.png" class="image-layout">
     <img src="../../../assets/images/{{event.image}}" class="image-event">
   </div>
