@@ -1,6 +1,7 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
-import { ModalController, Platform } from '@ionic/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonContent, ModalController, Platform } from '@ionic/angular';
+import { Animation } from 'src/app/animations/animation';
 import { EventFilterComponent } from './components/event-filter/event-filter.component';
 
 
@@ -9,7 +10,9 @@ import { EventFilterComponent } from './components/event-filter/event-filter.com
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
-
+  animations: [
+    Animation
+  ],
 })
 export class HomePage implements OnInit {
 
@@ -43,6 +46,10 @@ export class HomePage implements OnInit {
   screenWidth: number;
   screenHeight: number;
   initialBreakpoint: number; // for modal filter
+  lastPositionScrollTop: number = 0;
+  isScrollDown: boolean = true;
+
+  @ViewChild(IonContent) content: IonContent;
 
   constructor(
     private modalCtrl: ModalController, 
@@ -56,11 +63,8 @@ export class HomePage implements OnInit {
 
   getScreenSize() {
     this.platform.ready().then(() => {
-      console.log('Width: ' + this.platform.width());
-      console.log('Height: ' + this.platform.height());
       this.screenWidth = this.platform.width();
       this.screenHeight = this.platform.height();
-
       if (this.screenHeight<670) this.initialBreakpoint = 0.5;
       else if (this.screenHeight<700) this.initialBreakpoint = 0.5;
       else if (this.screenHeight<750) this.initialBreakpoint = 0.5;
@@ -68,9 +72,16 @@ export class HomePage implements OnInit {
       else if (this.screenHeight<850) this.initialBreakpoint = 0.4;
       else this.initialBreakpoint = 0.4;
     });
-
-    
   }
+
+  scrolling(event: any) {
+    if (this.lastPositionScrollTop>=event.detail.scrollTop) {
+      this.isScrollDown = true;
+    } else this.isScrollDown = false;
+    this.lastPositionScrollTop = event.detail.scrollTop;
+
+  }
+
 
   async openModal() {
     const modal = await this.modalCtrl.create({

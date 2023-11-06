@@ -37,6 +37,9 @@
 
 .info-container {
     display: inline-flex;
+    position: relative;
+    width: 100%;
+
     .organizer {
         margin-right: 10px;
     }
@@ -61,5 +64,14 @@
     .location {
         opacity: 0.7;
     }
+
+    .ellipsis-popup {
+        position: absolute;
+        top: -8px;
+        right: 0.5rem;
+        z-index: 1;
+        padding: 10px 16px 8px 16px;
+        border-radius: 20px;
+      }  
 
 }

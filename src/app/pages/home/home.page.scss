@@ -2,7 +2,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
+    margin-top: 4.5rem;
+    
     .filter-container {
       width: 100%;
       height: 4.5rem;
@@ -10,6 +11,19 @@
       position: fixed;
       top: 0;
       z-index: 1;
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .name-app {
+        font-size: 2.5rem;
+        margin-left: 1rem;
+      }
+
+      .filter-icon {
+        margin-right: 1.5rem;
+      }
+
     }
 
   }
