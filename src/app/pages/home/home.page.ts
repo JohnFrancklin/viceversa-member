@@ -35,7 +35,7 @@ export class HomePage implements OnInit {
     },
     {
       id: 5,
-      image: "event5.png"
+      image: "event5.jpg"
     },
     {
       id: 6,
