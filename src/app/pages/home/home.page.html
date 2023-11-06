@@ -7,16 +7,16 @@
 
     <div class="filter-container" *ngIf="isScrollDown" [@slideInDown]>
 
+      <ion-button (click)="openModal()">
+        Filter
+      </ion-button>
+
     </div>
 
     <div class="column" *ngFor="let event of events">
       <app-event-post [event]="event"></app-event-post>
     </div>
 
-    
-    <ion-button (click)="openModal()" expand="block" shape="round">
-      Filter
-    </ion-button>
 
   </div>
 
